@@ -23,6 +23,7 @@ let getQuote = () => {
  btn.onclick = function() {
         const randomColor = getRandomColor();
         document.body.style.backgroundColor = randomColor;
+   container.style.backgroundColor = randomColor;
     }
 window.addEventListener("load", getQuote);
 btn.addEventListener("click", getQuote);
