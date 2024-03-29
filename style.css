@@ -5,7 +5,7 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  background-color: #f43543;
+  background-color: #a18db1;
 }
 .wrapper {
   width: 400px;
@@ -16,7 +16,7 @@ body {
 }
 .container {
   width: 100%;
-  background-color: #f43543;
+  background-color: #2ca17f;
   padding: 50px 40px;
   box-shadow: 0 20px 65px rgba(87, 11, 16, 0.5);
   position: relative;
@@ -28,7 +28,7 @@ body {
   position: absolute;
   width: 80%;
   height: 120%;
-  background-color: #ffffff;
+  background-color: #a18db1;
   z-index: -1;
   top: -10%;
   left: 10%;
