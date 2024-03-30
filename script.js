@@ -19,6 +19,7 @@ const textContainer = document.getElementById("textContainer");
 
 downloadLink.addEventListener("click", function () {
   html2canvas(document.getElementById("quote"), {
+    backgroundcolour: 'rgba(255, 0, 0)';
     scale: 3,
     onrendered: function (canvas) {
       const screenshot = canvas.toDataURL("image/png");
