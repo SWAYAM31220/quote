@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Random Quote Generator</title>
     <!-- Google Font -->
@@ -16,18 +22,29 @@
   <body>
     <div class="wrapper">
       <div class="container">
-        <p id="quote">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas,
-          magni.
-        </p>
+        <div class="textContainer">
+          <p id="quote">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas,
+            magni.
+          </p>
+        </div>
         <h3 id="author">Lorem, ipsum.</h3>
-        <button id="btn">Get Quote</button>
-        <br>
-        <i id="copyIcon" class="fa-regular fa-copy" ></i>></i>
 
+        <button id="btn">Get Quote</button>
+        <br />
+        <ul>
+          <li><i id="copyIcon" class="fa-regular fa-copy"></i></li>
+          <li>
+            <a id="downloadLink" download="text.jpg">
+              <i class="fas fa-download"></i>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
+
     <!-- Script -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
