@@ -4,6 +4,7 @@ let btn = document.getElementById("btn");
 const container = document.querySelector(".container");
 const quoteContainer = document.querySelector(".container p");
 const url = "https://api.quotable.io/random";
+const downloadLink = document.getElementById("downloadLink");
 
 let getQuote = () => {
   fetch(url)
@@ -13,9 +14,25 @@ let getQuote = () => {
       author.innerText = item.author;
     });
 };
+
+const textContainer = document.getElementById("textContainer");
+
+downloadLink.addEventListener("click", function () {
+  html2canvas(document.getElementById("quote"), {
+    scale: 3,
+    onrendered: function (canvas) {
+      const screenshot = canvas.toDataURL("image/png");
+      const link = document.createElement("a");
+      link.href = screenshot;
+      link.download = "text_screenshot.png"; // Set your desired filename
+      link.click();
+    },
+  });
+});
+
 function copyText() {
-    const quoteText = quoteContainer.textContent;
-    navigator.clipboard.writeText(quoteText);
+  const quoteText = quoteContainer.textContent;
+  navigator.clipboard.writeText(quoteText);
 }
 
 copyIcon.addEventListener("click", copyText);
