@@ -19,7 +19,6 @@ const textContainer = document.getElementById("textContainer");
 
 downloadLink.addEventListener("click", function () {
   html2canvas(document.getElementById("quote"), {
-    backgroundcolour: 'rgba(255, 0, 0)';
     scale: 3,
     onrendered: function (canvas) {
       const screenshot = canvas.toDataURL("image/png");
@@ -32,8 +31,29 @@ downloadLink.addEventListener("click", function () {
 });
 
 function copyText() {
+  // Get the text to be copied
   const quoteText = quoteContainer.textContent;
-  navigator.clipboard.writeText(quoteText);
+
+  // Attempt to copy the text to the clipboard
+  navigator.clipboard.writeText(quoteText)
+    .then(() => {
+      // Text copied successfully, update message element
+      const messageElement = document.getElementById("copy-that");
+      if (messageElement) { // Check if message element exists
+        messageElement.textContent = "Text copied!";
+        
+        // Optionally, hide the message after a few seconds
+        setTimeout(() => {
+          messageElement.textContent = "";
+        }, 2000); // Hide after 2 seconds (adjust as needed)
+      } else {
+        console.log("Message element not found. Add an element with id='copy-message' for display.");
+      }
+    })
+    .catch(err => {
+      console.error('Failed to copy: ', err);
+      // Handle potential errors (optional)
+    });
 }
 
 copyIcon.addEventListener("click", copyText);
