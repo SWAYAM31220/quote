@@ -106,3 +106,10 @@ ul li {
   color: #f43543;
   cursor: pointer;
 }
+.copy-that {
+  text-align: center;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  font-family: "Roboto Mono", monospace;
+  border-radius: 8px;
+}
